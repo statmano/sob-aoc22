@@ -1,0 +1,3 @@
+Slooppppy sloppy slpoppy. I am onot proud of that code- technically it fails if the final elf is in the Top 3 or the  the highest carrier or for Part 1 or in the Top 233 for Part 2. I shou_should_ really break them into smaller pieces then link them togehther as thI don't feel confident in scaling these prarts fto future days, just h.
+- Avoided using an array of arrays and just went with blank element test instead. 
+- Had to reverse the order in part 2 when bumping exisiting elements down. Thought about using pop or destructuring, but in the end just wanted a working solution.
