@@ -27,12 +27,15 @@ function calorieLoop(arr){
       currentCalorie = 0;
     }
   }
+  $('#Results__PartOne').html(`The elf carrying the most calories is carrying ${highestCarry} calories!`);
 }
 
 // Part 2: Just need to add in two more highest carry variables, compare the current to each, and bump them down if so. Or we can do it in one array. One array is probably the cleaner way? I guess I'll do that.
 var threeCarry = [0,0,0];
 
 function threeHighLoop(arr){
+  highestCarry = 0;
+  currentCalorie = 0;
   for(var i = 0; i < arr.length; i++){
     if(Number(arr[i]) > 0){
       currentCalorie = currentCalorie + Number(arr[i]);
@@ -64,10 +67,19 @@ function threeHighLoop(arr){
       currentCalorie = 0;
     } 
   }
+  $('#Results__PartTwo').html(`The three elves carrying the most calories are carrying ${threeCarry[0]}, ${threeCarry[1]}, and ${threeCarry[2]} calories! The sum of those are ${threeCarry[0] + threeCarry[1] + threeCarry[2]} calories!`);
 }
 
 
-$("#tBut").click(function() {
+$("#partOneButton").click(function() {
+ $.get("/textconvert", { dayFile: "./day01.txt" }, async function(data) {
+   await console.log(data);
+   calorieLoop(data);
+   //threeHighLoop(data);
+ })
+})
+
+$("#partTwoButton").click(function() {
  $.get("/textconvert", { dayFile: "./day01.txt" }, async function(data) {
    await console.log(data);
    //calorieLoop(data);
